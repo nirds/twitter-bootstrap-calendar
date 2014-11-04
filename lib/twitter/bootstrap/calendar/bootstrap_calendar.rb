@@ -47,18 +47,11 @@ module Twitter
 
         def header
           content_tag 'div', class: 'month_header row-fluid' do
-            standard = day_names.map { |day|
-              content_tag :div, class: 'span1 visible-desktop' do
-                day
-              end
-            }.join.html_safe
-            mobile = mobile_day_names.map { |day|
+            mobile_day_names.map { |day|
               content_tag :div, class: 'span1 hidden-desktop', style: 'width: 14.1%' do
                 day
               end
             }.join.html_safe
-
-            standard + mobile
           end
         end
 
